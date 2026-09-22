@@ -127,7 +127,7 @@
                         <h3>E-Commerce Website Layout</h3>
                         <p>Feature-rich e-commerce website layout with product showcasing and seamless checkout
                             experience.</p>
-                        <a href="https://ultimate-affiliate-store-for-trendi.vercel.app/" class="view-project" class="view-project">View Project →</a>
+                        <a href="https://ultimate-affiliate-store-for-trendi.vercel.app/" class="view-project">View Project →</a>
                     </div>
                 </div>
             </div>
@@ -216,11 +216,11 @@
             <div class="limited-access">
                 <a href="#contact" class="limited-access-link blink">Limited Access — Offer Pricing</a>
                 <p class="limited-access-subtitle">Grab the latest updated pricing before this limited access offer ends.</p>
-                <div class="limited-access-prices">
-                    <span><strong>Landing Page</strong> ₹1,999</span>
-                    <span><strong>Standard</strong> ₹2,999</span>
-                    <span><strong>Unlimited</strong> ₹4,999</span>
-                </div>
+                <ul class="limited-access-prices">
+                    <li><strong>Landing Page</strong><span class="offer-price">₹1,999</span></li>
+                    <li><strong>Standard</strong><span class="offer-price">₹2,999</span></li>
+                    <li><strong>Unlimited</strong><span class="offer-price">₹4,999</span></li>
+                </ul>
                 <a href="#contact" class="btn btn-primary">Claim Offer</a>
             </div>
         </div>
@@ -232,7 +232,7 @@
             <h2 class="section-title">Frequently Asked Questions</h2>
             <div class="faq-grid">
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
                         <h3>How long does a project take?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
@@ -243,7 +243,7 @@
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
                         <h3>What technologies do you use?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
@@ -253,7 +253,7 @@
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
                         <h3>Do you provide ongoing support?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
@@ -263,7 +263,7 @@
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
                         <h3>Can you help with SEO?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
@@ -331,10 +331,14 @@
                     <input type="hidden" name="_replyto" id="replyToField" value="">
                     <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="form-honeypot"
                         aria-hidden="true">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <input type="tel" name="phone" placeholder="Phone (Optional)">
-                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <label class="visually-hidden" for="cf-name">Your Name</label>
+                    <input id="cf-name" type="text" name="name" placeholder="Your Name" required autocomplete="name">
+                    <label class="visually-hidden" for="cf-email">Your Email</label>
+                    <input id="cf-email" type="email" name="email" placeholder="Your Email" required autocomplete="email">
+                    <label class="visually-hidden" for="cf-phone">Phone (Optional)</label>
+                    <input id="cf-phone" type="tel" name="phone" placeholder="Phone (Optional)" autocomplete="tel">
+                    <label class="visually-hidden" for="cf-message">Your Message</label>
+                    <textarea id="cf-message" name="message" placeholder="Your Message" rows="5" required></textarea>
                     <button type="submit" class="btn btn-primary" id="contactSubmitBtn">Send Message</button>
                     <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
                 </form>

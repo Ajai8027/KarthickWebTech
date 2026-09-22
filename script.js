@@ -36,15 +36,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const faqItems = document.querySelectorAll('.faq-item');
 faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
-    question.addEventListener('click', () => {
+    const toggleFaq = () => {
         // Close other items
         faqItems.forEach(otherItem => {
             if (otherItem !== item) {
                 otherItem.classList.remove('active');
+                const q = otherItem.querySelector('.faq-question');
+                if (q) q.setAttribute('aria-expanded', 'false');
             }
         });
         // Toggle current item
         item.classList.toggle('active');
+        question.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+    };
+    question.addEventListener('click', toggleFaq);
+    question.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleFaq();
+        }
     });
 });
 
