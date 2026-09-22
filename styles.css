@@ -726,12 +726,15 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     margin-top: 3rem;
+    align-items: stretch;
 }
 
 .contact-info {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    justify-content: center;
+    height: 100%;
 }
 
 .info-item {
@@ -755,6 +758,17 @@ body {
 .info-item p {
     color: var(--muted-text);
     margin: 0;
+}
+
+.info-link {
+    color: var(--light-text);
+    text-decoration: none;
+    overflow-wrap: break-word;
+    transition: color 0.3s ease;
+}
+
+.info-link:hover {
+    color: #3b82f6;
 }
 
 .contact-form {
