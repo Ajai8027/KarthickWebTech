@@ -339,8 +339,21 @@ body {
 }
 
 .service-icon {
-    font-size: var(--text-2xl);
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.35);
+    color: #93c5fd;
     margin-bottom: 1rem;
+}
+
+.service-icon svg {
+    width: 26px;
+    height: 26px;
 }
 
 .service-card h3 {
