@@ -463,6 +463,8 @@ body {
     text-align: center;
     transition: all 0.3s ease;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .pricing-card.popular {
@@ -496,10 +498,20 @@ body {
     margin-bottom: 1.5rem;
 }
 
+.old-price {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--muted-text);
+    text-decoration: line-through;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
 .features {
     list-style: none;
     margin-bottom: 2rem;
     text-align: left;
+    flex: 1;
 }
 
 .features li {
@@ -509,6 +521,11 @@ body {
 
 .pricing-card:hover {
     background: rgba(255, 255, 255, 0.12);
+}
+
+.pricing-card .btn {
+    margin-top: auto;
+    align-self: center;
 }
 
 /* Limited Access Banner */
@@ -523,9 +540,29 @@ body {
     margin-top: 2rem;
 }
 
-.limited-access h3 {
+.limited-access h3,
+.limited-access-link {
     font-size: 1.5rem;
+    font-weight: 700;
     margin-bottom: 0.5rem;
+    color: var(--light-text);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.blink {
+    animation: blink-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes blink-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .blink {
+        animation: none;
+    }
 }
 
 .limited-access-subtitle {
